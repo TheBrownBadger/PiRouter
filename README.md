@@ -18,6 +18,7 @@ You’ll get per-interface bandwidth stats, client signal strength, protocol sum
   
 ---------------------------------------------------------------------
 
-# I've chosen a minimalist setup with Telegraf and InfluxDB. That said, this project uses InfluxDb version 1.x. If you attempt to declare inputs or ouputs designed for 2.x you will have a tough time debugging. Anyway, I will continue building this project with the further configuration, ping, download speed, intrusion attempts, etc... 
+## A little about the project
+I've chosen a minimalist setup with Telegraf and InfluxDB. That said, this project uses InfluxDb version 1.x. If you attempt to declare inputs or ouputs designed for 2.x you will have a tough time debugging. Anyway, I will continue building this project with the further configuration, ping, download speed, intrusion attempts, etc... 
 
-# The ultimate goal for this project is using a FPGA to accelerate some hardware. 
+The ultimate goal for this project is using a FPGA to accelerate some hardware. 
