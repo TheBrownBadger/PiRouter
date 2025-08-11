@@ -1,4 +1,4 @@
-#### Installation
+# Installation
 
 ## Prerequisites
 - Raspberry Pi with Raspberry Pi OS (64-bit)
