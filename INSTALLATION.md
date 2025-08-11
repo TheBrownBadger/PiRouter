@@ -1,6 +1,6 @@
 #### Installation
 
-### Prerequisites
+## Prerequisites
 - Raspberry Pi with Raspberry Pi OS (64-bit)
 - Internet connection for initial setup
 - WiFi adapter that supports AP mode
@@ -8,14 +8,14 @@
 - Working knowledge of the command line
   * InfluxDB 1.x does not have a UI but 2.x does
  
-### Step 1: Update the System
+## Step 1: Update the System
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
 
-### Step 2: Install Required Packages
+## Step 2: Install Required Packages
   - dnsmasq: DHCP and DNS server
   - hostapd: Access point daemon
   - vnstat: Network traffic monitor
@@ -35,7 +35,7 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
   * For InfluxDB visit <https://www.influxdata.com> and follow the steps. 
   * For Grafana, visit <https://grafana.com> and create a free account. For this project I've chosen Grafana Cloud.
 
-### Step 3: Enable and Configure Services
+## Step 3: Enable and Configure Services
   
   - # Configure: (See dedicated file)
     - dnsmasq
@@ -59,7 +59,7 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
       ```
 
       
-### Step 4: Prepare Custom Monitoring Scripts
+## Step 4: Prepare Custom Monitoring Scripts
   
   - We make custom monitoring scripts and store them in /home/pi/scripts/
 
@@ -73,7 +73,7 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
     ```
   - Ensure Telegraf ```exec``` input plugin is configured to run these scripts...more on that later
 
-### Step 5: Configure Telegraf to Run Scripts
+## Step 5: Configure Telegraf to Run Scripts
   - Your Telegraf configuration is found at ```/etc/telegraf/telegraf.conf``` and has many configurations, for now, put everything, including this script, at the bottom.
 
     ```toml
@@ -96,7 +96,7 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
       ```
 
 
-### Step 6: Import Grafana Dashboard
+## Step 6: Import Grafana Dashboard
 
  - Access Grafana at ```http://<pi-ip>:3000``` your default credientials are: admin/admin
   - Import the provided JSON dashboard file for monitoring visuals
