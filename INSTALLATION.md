@@ -1,4 +1,4 @@
-## Installation
+#### Installation
 
 ### Prerequisites
 - Raspberry Pi with Raspberry Pi OS (64-bit)
@@ -9,9 +9,12 @@
   * InfluxDB 1.x does not have a UI but 2.x does
  
 ### Step 1: Update the System
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+
+
 ### Step 2: Install Required Packages
   - dnsmasq: DHCP and DNS server
   - hostapd: Access point daemon
@@ -22,15 +25,18 @@ sudo apt update && sudo apt upgrade -y
   - iftop: Network bandwidth monitor
   - iw: Wireless tools
   - jq: JSON processor for scripts
+
     
 ```bash
 sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop iw jq -y
 ```
+  
   * Note: You may have to download InfluxDB and Grafana from their respective sites
   * For InfluxDB visit <https://www.influxdata.com> and follow the steps. 
   * For Grafana, visit <https://grafana.com> and create a free account. For this project I've chosen Grafana Cloud.
 
 ### Step 3: Enable and Configure Services
+  
   - # Configure: (See dedicated file)
     - dnsmasq
     - hostapd
@@ -45,13 +51,16 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
     ```bash
     sudo systemctl enable -now vnstat telegraf influxdb grafana-server
     ````
+  
     - Check service status
    
       ```bash
       sudo systemctl status vnstat telegraf influxdb grafana-server
       ```
+
       
 ### Step 4: Prepare Custom Monitoring Scripts
+  
   - We make custom monitoring scripts and store them in /home/pi/scripts/
 
     ```bash
@@ -78,13 +87,17 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
       timeout = "10s"
       data_format = "influx"
     ```
+ 
   -  Restart Telegraf after editing
+
     
       ```bash
       sudo systemctl restart telegraf
       ```
 
+
 ### Step 6: Import Grafana Dashboard
-  - Access Grafana at ```http://<pi-ip>:3000``` your default credientials are: admin/admin
+
+ - Access Grafana at ```http://<pi-ip>:3000``` your default credientials are: admin/admin
   - Import the provided JSON dashboard file for monitoring visuals
   
