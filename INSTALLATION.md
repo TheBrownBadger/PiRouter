@@ -13,7 +13,7 @@
 sudo apt update && sudo apt upgrade -y
 ```
 ### Step 2: Install Required Packages
-  - # dnsmasq: DHCP and DNS server
+  - dnsmasq: <DHCP and DNS server>
   - hostapd: Access point daemon
   - vnstat: Network traffic monitor
   - influxdb: Time-series database
