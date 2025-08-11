@@ -27,7 +27,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop iw jq -y
 ```
   * Note: You may have to download InfluxDB and Grafana from their respective sites
-  * For InfluxDB visit https://www.influxdata.com and follow the steps. 
+  * For InfluxDB visit <https://www.influxdata.com> and follow the steps. 
   * For Grafana, visit <https://grafana.com> and create a free account. For this project I've chosen Grafana Cloud.
 
 ### Step 3: Enable and Configure Services
@@ -45,7 +45,7 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop 
     ```bash
     sudo systemctl enable -now vnstat telegraf influxdb grafana-server
     ````
-    - # Check service status
+    - Check service status
    
       ```bash
       sudo systemctl status vnstat telegraf influxdb grafana-server
