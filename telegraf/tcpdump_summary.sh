@@ -24,3 +24,6 @@ DROPPED=${DROPPED:-0}
 # Output in Influx line protocol
 # Format: measurement,tag=value field=value
 echo "tcpdump_summary,interface=$IFACE captured=${CAPTURED}i,received=${RECEIVED}i,dropped=${DROPPED}i"
+
+# Make it executable
+`chmod +x /home/pi/scripts/tcpdump_summary.sh`
