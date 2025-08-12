@@ -1,0 +1,14 @@
+# Drop invalid packets
+`sudo iptables -A INPUT -m conntrack --ctstate INVALID -j DROP`
+
+# Allow established connections
+`sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT`
+
+# Block ping flood
+`sudo iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 1/s -j ACCEPT`
+`sudo iptables -A INPUT -p icmp --icmp-type echo-request -j DROP`
+
+# Prevent IP spoofing
+for iface in wlan0 wlan1; do
+    sudo iptables -A INPUT -i $iface -s 127.0.0.0/8 -j DROP
+done
