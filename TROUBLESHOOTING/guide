@@ -1,0 +1,3 @@
+# Connection drops after connecting
+# Disable WiFi power saving on Pi
+`sudo iw dev wlan0 set power_save off`
