@@ -25,10 +25,12 @@ sudo apt update && sudo apt upgrade -y
   - iftop: Network bandwidth monitor
   - iw: Wireless tools
   - jq: JSON processor for scripts
+  - fail2ban: Brute-force blocking
+  - arpwatch: Rogue device detection
 
     
 ```bash
-sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop iw jq -y
+sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop iw jq fail2ban arpwatch -y
 ```
   
   * Note: You may have to download InfluxDB and Grafana from their respective sites
