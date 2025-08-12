@@ -22,6 +22,7 @@ sudo apt update && sudo apt upgrade -y
   - influxdb: Time-series database
   - grafana: Visualization dashboard
   - tcpdump: Network packet analyzer
+  - net-tools: netstat and ifconfig provider
   - iftop: Network bandwidth monitor
   - iw: Wireless tools
   - jq: JSON processor for scripts
@@ -30,7 +31,7 @@ sudo apt update && sudo apt upgrade -y
 
     
 ```bash
-sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump iftop iw jq fail2ban arpwatch -y
+sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump net-tools iftop iw jq fail2ban arpwatch -y
 ```
   
   * Note: You may have to download InfluxDB and Grafana from their respective sites
