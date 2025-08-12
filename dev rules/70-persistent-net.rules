@@ -1,0 +1,13 @@
+# udev rules so wlan0 is always your access point interface and wlan1 is always upstream
+
+# Lock interface names
+# Edit or create /etc/udev/rules.d/70-persistent-net.rules
+`SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="<MAC_of_AP>", NAME="wlan0"`
+`SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="<MAC_of_Upstream>", NAME="wlan1"`
+
+# Save iptables
+`sudo sh -c "iptables-save > /etc/iptables/rules.v4"`
+
+# Ensure they're auto-loaded at boot
+`sudo apt install iptables-persistent`
+
