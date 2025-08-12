@@ -26,4 +26,4 @@ DROPPED=${DROPPED:-0}
 echo "tcpdump_summary,interface=$IFACE captured=${CAPTURED}i,received=${RECEIVED}i,dropped=${DROPPED}i"
 
 # Make it executable
-`chmod +x /home/pi/scripts/tcpdump_summary.sh`
+chmod +x /home/pi/scripts/tcpdump_summary.sh
