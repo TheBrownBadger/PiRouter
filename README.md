@@ -1,5 +1,7 @@
 # PiRouter
 # Raspberry Pi 5 WiFi Router with Network Monitoring
+---
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/69aa4e88-73e9-4a99-b40d-198bf261c062" />
 
 This project turns a Raspberry Pi 5 (8GB RAM) into a WiFi access point router with detailed network monitoring using `vnstat`, `Telegraf`, `InfluxDB`, and `Grafana`.  
 
