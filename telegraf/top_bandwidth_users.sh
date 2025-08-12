@@ -14,3 +14,6 @@ sudo iftop -t -s 10 -i "$IFACE" 2>/dev/null \
     CLEAN_BYTES=$(echo $BYTES | tr -d '[:alpha:]')
     echo "top_users,host=$HOST,ip=$CLEAN_IP bytes=$CLEAN_BYTES"
 done
+
+# Make it executable
+`chmod +x /home/pi/scripts/top_bandiwdth_users.sh`
