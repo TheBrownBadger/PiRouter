@@ -16,4 +16,4 @@ sudo iftop -t -s 10 -i "$IFACE" 2>/dev/null \
 done
 
 # Make it executable
-`chmod +x /home/pi/scripts/top_bandiwdth_users.sh`
+`chmod +x /home/pi/scripts/top_bandwidth_users.sh`
