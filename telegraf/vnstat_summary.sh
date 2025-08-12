@@ -13,4 +13,4 @@ vnstat --json | jq -c '.interfaces[]' | while read iface; do
 done
 
 # Make it executable
-`chmod +x /home/pi/scripts/vnstat_summary.sh`
+chmod +x /home/pi/scripts/vnstat_summary.sh
