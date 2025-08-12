@@ -9,6 +9,7 @@
     link/ether 11:22:33:44:55:66 brd ff:ff:ff:ff:ff:ff
 
 # Your MAC address is aa:bb:cc:dd:ee:ff if wlan0 is your access point
+# Your MAC address is 11:22:33:44:55:66 is wlan1 is your upstream
 
 # Next, edit or create /etc/udev/rules.d/70-persistent-net.rules
 `SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="<MAC_of_AP>", NAME="wlan0"`
