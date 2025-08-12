@@ -11,3 +11,6 @@ vnstat --json | jq -c '.interfaces[]' | while read iface; do
 
     echo "vnstat_usage,host=$HOST,interface=$NAME rx_bytes=$RX,tx_bytes=$TX"
 done
+
+# Make it executable
+`chmod +x /home/pi/scripts/vnstat_summary.sh`
