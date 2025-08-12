@@ -40,12 +40,12 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump net-to
 
 ## Step 3: Enable and Configure Services
   
-  - # Configure: (See dedicated file)
+  - ### Configure: (See dedicated file)
     - dnsmasq
     - hostapd
     - dhcpd
 
-  - # Enable:
+  - ### Enable:
     - vnstat
     - telegraf
     - influxdb
@@ -84,6 +84,7 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump net-to
       commands = [
         "/home/pi/scripts/vnstat_summary.sh",
         "/home/pi/scripts/tcpdump_summary.sh",
+        "/home/pi/scripts/top_bandwidth_users.sh,
         "/home/pi/scripts/wifi_clients.sh"
     ]
 
