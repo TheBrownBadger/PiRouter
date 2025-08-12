@@ -1,1 +1,36 @@
+# Setup/configuration of NAT rules
+
+# Enable NAT and Routing
+
+`sudo vim /etc/sysctl.conf`
+
+
+# Uncomment or add:
+net.ipv4.ip_forward=1
+
+# Next, Flush Old iptables Rules
+`sudo iptables -F`
+`sudo iptables -t nat -F`
+
+
+# Next, add NAT rule (wlan1 is our uplink, wlan0 is our access point)
+`sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE`
+`sudo iptables -A FORWARD -i wlan0 -o wlan1 -m state --state RELATED,ESTABLISHED -j ACCEPT`
+`sudo iptables -A FORWARD -i wlan1 -o wlan0 -j ACCEPT`
+
+
+# Save iptables
+`sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"`
+
+# Start Acess Point
+`sudo systemctl start hosapd`
+
+## At this point you should test the connect from a client
+## Be sure you can
+  - Check IP (should be in the range you've specified)
+  - Ping uplink
+  - Ping 8.8.8.8
+  - Ping google.com
+
+# If any of these fail, check the troubleshooting guide.
 
