@@ -103,5 +103,11 @@ sudo apt install dnsmasq hostapd vnstat telegraf influxdb grafana tcpdump net-to
 ## Step 6: Import Grafana Dashboard
 
  - Access Grafana at ```http://<pi-ip>:3000``` your default credientials are: admin/admin
-  - Import the provided JSON dashboard file for monitoring visuals
+ - Import the provided JSON dashboard file for monitoring visuals
   
+
+## You're Ready!
+
+
+
+
