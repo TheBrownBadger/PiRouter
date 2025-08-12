@@ -11,5 +11,5 @@ awk -v host="$HOST" '
 /signal:/ {SIG=$2; printf "wifi_clients,host=%s,mac=%s signal_dbm=%s\n", host, MAC, SIG}'
 
 # Make it executable
-`chmod +x /home/pi/scripts/wifi_clients.sh`
+chmod +x /home/pi/scripts/wifi_clients.sh
 
