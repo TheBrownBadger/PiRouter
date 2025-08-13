@@ -1,6 +1,12 @@
 # Connection drops after connecting
-# Disable WiFi power saving on Pi
+
+## Step 1: Disable WiFi power saving on Pi
+
+```bash
 sudo iw dev wlan0 set power_save off
-# Restart services
+```
+
+## Step 2: Restart services
+```bash
 sudo systemctl restart hostapd
 sudo systemctl restart dnsmasq
