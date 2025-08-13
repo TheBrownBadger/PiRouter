@@ -21,7 +21,10 @@ You’ll get per-interface bandwidth stats, client signal strength, protocol sum
 - Custom scripts logging WiFi client info and top bandwidth users  
 - Metrics collected with `Telegraf` and stored in `InfluxDB 1.x`  
 - Real-time visualization in Grafana
-  
+
+
+<img width="3440" height="1440" alt="Average Ping, download, and upload" src="https://github.com/user-attachments/assets/8888f490-3b21-4141-9374-3a0d425252d8" />
+
 ---
 
 ## A little about the project
