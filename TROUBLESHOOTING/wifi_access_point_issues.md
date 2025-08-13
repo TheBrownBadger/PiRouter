@@ -1,6 +1,5 @@
 # Access Point is not visible or Client cannot connect
 
----
 
 ## Step 1: Check hostapd status:
 
