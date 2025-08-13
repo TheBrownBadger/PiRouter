@@ -1,0 +1,73 @@
+# Setup/configuration of NAT rules
+
+## Enable NAT and Routing
+
+`sudo vim /etc/sysctl.conf`
+
+
+## Uncomment or add:
+net.ipv4.ip_forward=1
+
+## Next, Flush Old iptables Rules
+
+```sudo iptables -F
+sudo iptables -t nat -F
+```
+
+## Default policies: drop incoming, allow outgoing, allow established
+
+```
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+```
+
+## Allow LAN (wlan0) to talk to the Pi
+
+`sudo iptables -A INPUT -i wlan0 -j ACCEPT`
+
+## Allow DHCP & DNS from clients
+
+```
+sudo iptables -A INPUT -i wlan0 -p udp --dport 67:68 --sport 67:68 -j ACCEPT
+sudo iptables -A INPUT -i wlan0 -p udp --dport 53 -j ACCEPT
+sudo iptables -A INPUT -i wlan0 -p tcp --dport 53 -j ACCEPT
+```
+
+## NAT traffic from wlan0 → wlan1
+
+```
+sudo iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE
+sudo iptables -A FORWARD -i wlan0 -o wlan1 -j ACCEPT
+sudo iptables -A FORWARD -i wlan1 -o wlan0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+```
+
+## Optional: block client-to-client communication on wlan0
+
+`sudo iptables -A FORWARD -i wlan0 -o wlan0 -j DROP`
+
+## Save iptables
+
+`sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"`
+
+## Enable and start arpwatch
+
+```
+sudo systemctcl enable arpwatch@wlan0
+sudo systemctcl start arpwatch@wlan0
+```
+
+# Start Acess Point
+
+`sudo systemctl start hosapd`
+
+### At this point you should test the connect from a client
+### Be sure you can...
+  - Check IP (should be in the range you've specified)
+  - Ping uplink
+  - Ping 8.8.8.8
+  - Ping google.com
+
+### If any of these fail, check the troubleshooting guide.
+
