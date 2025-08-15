@@ -4,7 +4,7 @@
 
   ### Excpected output:
   
-  > net.ipv4.ip_forward = 1
+  > 1
 
 ### If not enabled add to /etc/sysctl.conf
 
